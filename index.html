@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+
+    <title>Quiz</title>
+</head>
+<body>
+    <h1 id="title">Exam</h1>
+    <!-- This section is Main Box -->
+    <div class="container">
+        <!-- This is Question Box -->
+        <div class="qContainer">
+            <h1 id="qTittle"></h1>
+            <ol type="I">
+                <li class="choice"><span id="choice0" onclick="calcltScore(this)"></span></li>
+                <li class="choice"><span id="choice1" onclick="calcltScore(this)"></span></li>
+                <li class="choice"><span id="choice2" onclick="calcltScore(this)"></span></li>
+                <li class="choice"><span id="choice3" onclick="calcltScore(this)"></span></li>
+            </ol>
+            <h3 id="txtStmt"></h3>
+        </div>
+
+        
+        <div class="btn">
+            <button type="button" class="nextbtn">Next</button>
+        </div>
+    </div>
+
+
+
+    <!-- This Section is related to Score -->
+    <div id="scoreBrd">
+        <h3 id="Ttitle">Score Is:</h3>
+        <h3 id="qScore"></h3>
+        <button type="button" id="btnScore" onclick="bkToQuiz()">Return to Quiz</button>
+        <button type="button" id="btnAnswer" onclick="select_Answer()">Answers</button>
+    </div>
+
+    <!-- In this Section the Answers will be handled -->
+    <div id="answerB">
+        <h3>Quiz Answers Are:</h3>
+        <ol type="1" id="qAns"></ol>
+        <button type="button" id="btnScore" onclick="bkToQuiz()">Return to Quiz</button>
+    </div>
+
+    <!-- This represents the location of the JavaScript file -->
+    <script src="./Assets/Javascript/script.js"></script>
+</body>
+</html>
