@@ -22,6 +22,29 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#container {
+    display: none;
+}
+#timer{
+    margin: 3rem auto;
+    width: 90vw;
+    padding: 2rem;
+    background: rgba(147, 10, 188, 0.847);
+    cursor: default;
+    border-radius: 1rem;
+    color: white;
+}
+
+.qContainerA{
+    margin: 3rem auto;
+    width: 90vw;
+    padding: 2rem;
+    background: rgba(37, 188, 10, 0.847);
+    cursor: default;
+    border-radius: 1rem;
+    color: white;
+}
+
 .qContainer{
     margin: 3rem auto;
     width: 90vw;
@@ -52,7 +75,7 @@ body{
 ol{
     position: relative;
     padding: 0 1.5rem;
-    color: rgb(202, 229, 229);
+    color: rgba(179, 13, 154, 0.98);
 }
 
 span{
@@ -69,9 +92,22 @@ span{
     margin-top: 1.5rem;
     color: rgb(250, 250, 253);
 }
+.btn1{
+    text-align: center;
+}
 
 .btn{
     text-align: center;
+}
+
+#buttonA{
+    padding: 0.2rem 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 1.5rem;
+    color: rgba(255, 255, 255, 0.98);
+    background: rgba(37, 188, 10, 0.847);
 }
 
 button{
@@ -90,7 +126,7 @@ button:active{
 
 #scoreBrd, #answerB{
     width: 20rem;
-    background: rgba(238, 241, 19, 0.786);
+    background: rgb(241, 176, 102);
     padding: 2rem;
     text-align: center;
     margin: auto;
@@ -102,7 +138,7 @@ button:active{
 #Ttitle{
     margin: 1rem 0;
 }
-#btnScore , #btnAnswer {
+#btnScore , #btnAnswer, #btnSubmit {
     margin-top: 1rem;
 }
 #score{
