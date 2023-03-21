@@ -1,5 +1,6 @@
+var timeLeft;
 
-    
+
 var questionB = [
         {
             qust : "What is the name of the president of the United States?",
@@ -31,10 +32,10 @@ var questionB = [
     ]
 
     
-
-
+var qCntr = document.getElementById('qContainerA');
+var btnStart = document.getElementById('btn1');
 var qust = document.getElementById('qTittle');
-var cntr = document.getElementById('container');
+var cntr = document.getElementById('container'); // check this...
 var scorecard= document.getElementById('scoreBrd'); // check this...
 var choice0= document.getElementById('choice0');
 var choice1= document.getElementById('choice1');
@@ -46,16 +47,9 @@ var span= document.querySelectorAll('span');
 var i=0; var score= 0;
 
 
-
-
-
-
-
-
-
-
 // This is the Function which starts the Quiz.
 function stQuiz() {
+    
     for (var a = 0; a < span.length; a++) {
         span[a].style.background='none';
         
@@ -69,17 +63,39 @@ function stQuiz() {
     txtStmt.innerHTML = "Question"+' '+(i+1)+' '+'of'+' '+questionB.length;
 }
 
-// This is calculating the exam score.
-function calcltScore(e){
-    if(e.innerHTML===questionB[i].answer && score<questionB.length)
-    {
-        score= score+1;
-        document.getElementById(e.id).style.background= 'yellow';
-    }
-    else{
-        document.getElementById(e.id).style.background= 'pink';
-    }
-    setTimeout(set_N_Qustion,500);
+//Creating Timer for the Questions
+var counter = 0;
+
+function setup(){
+    
+    timeLeft = 600;
+    
+    var timer = document.querySelector('#time');
+    
+    console.log(timer); 
+
+   
+    var timercheck = setInterval(function() {
+        timer.textContent = "Time Left: " + Math.floor(timeLeft / 60) + " : " + timeLeft % 60
+        timeLeft--
+         
+        
+       
+        if (timeLeft < 0) {
+            
+            
+            clearInterval(timercheck)
+        }
+
+        if(timeLeft == 0)
+        {
+            location.reload();
+        }
+
+        }, 1000)
+    
+
+    
 }
 
 
@@ -87,6 +103,36 @@ function calcltScore(e){
 
 
 
+
+
+
+
+
+
+
+function loadQuizPage() {
+    cntr.style.display = 'block'
+    qCntr.style.display = 'none'
+    btnStart.style.display = 'none'
+    setup();
+    
+    
+}
+
+// This is calculating the exam score.
+function calcltScore(e){
+    if(e.innerHTML===questionB[i].answer && score<questionB.length)
+    {
+        score= score+1;
+        document.getElementById(e.id).style.background= 'yellow';
+        
+    }
+    else{
+        timeLeft = timeLeft - 5;
+        document.getElementById(e.id).style.background= 'pink';
+    }
+    setTimeout(set_N_Qustion,300);
+}
 
 
 // This is the Function which moves to the next question.
@@ -98,10 +144,12 @@ function set_N_Qustion() {
     }
     else{
         pnts.innerHTML= score+ '/'+ questionB.length;
-        cntr.style.display= 'none';
-        scoreBrd.style.display= 'block'
+        cntr.style.display= 'none'; // Here the CNTR value is NULL, therefore NULL can't be set to NONE, at least here it has to have a value instead of NULL.
+        scorecard.style.display= 'block'
     }
 }
+
+
 
 // Now to Click Button Events
 next.addEventListener('click', set_N_Qustion)
@@ -120,7 +168,7 @@ function select_Answer() {
     var answerBn= document.getElementById('answerB');
     var answers= document.getElementById('qAns');
     answerBn.style.display= 'block';
-    scoreBrd.style.display= 'none';
+    scorecard.style.display= 'none';
 
     for(var a=0; a<questionB.length; a++)
     {
