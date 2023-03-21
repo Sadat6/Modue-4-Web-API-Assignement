@@ -1,0 +1,5 @@
+The URL of the functional, deployed application:
+https://sadat6.github.io/Modue-4-Web-API-Assignement/
+
+The URL of the GitHub repository:
+https://github.com/Sadat6/Modue-4-Web-API-Assignement

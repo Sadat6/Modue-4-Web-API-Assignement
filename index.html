@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <title>Quiz</title>
 </head>
 <body>
     <h1 id="title">Exam</h1>
+    
+    <div class="qContainerA" id="qContainerA">
+        <h1>Welcome to today's Quiz!</h1><br>
+        <p>If you wish to start the Quiz, just simply Click on the Start Button to proceed.</p>
+        
+    </div>
+
+    <div class="btn1" id="btn1">
+        <button type="button" id="buttonA" onclick="loadQuizPage()">Start</button>
+    </div>
+    
+    
     <!-- This section is Main Box -->
-    <div class="container">
+    <div id="container">
+        <div id="timer">
+            <h3 id="time"></h3>
+        </div>
         <!-- This is Question Box -->
         <div class="qContainer">
             <h1 id="qTittle"></h1>
@@ -38,6 +53,7 @@
         <h3 id="qScore"></h3>
         <button type="button" id="btnScore" onclick="bkToQuiz()">Return to Quiz</button>
         <button type="button" id="btnAnswer" onclick="select_Answer()">Answers</button>
+        <button type="submit" id = "btnSubmit">Submit</button>
     </div>
 
     <!-- In this Section the Answers will be handled -->
@@ -48,6 +64,8 @@
     </div>
 
     <!-- This represents the location of the JavaScript file -->
-    <script src="./Assets/Javascript/script.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
